@@ -1,4 +1,11 @@
-/ecommerce-backend
+# E-commerce Backend
+
+This is the backend for our e-commerce application.
+
+## Project Structure
+
+```
+/ecom-backend
 │
 ├── /cmd                # Main application entry point (e.g., main.go)
 │   └── main.go         # Starts the server
@@ -44,3 +51,11 @@
 ├── .gitignore          # Ignored files (e.g., binaries, build artifacts)
 ├── go.mod              # Go modules file
 └── go.sum              # Go modules dependencies
+```
+
+## Getting Started
+
+## API Documentation
+
+## Contributing
+

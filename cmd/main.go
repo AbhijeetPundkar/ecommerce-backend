@@ -1,23 +1,24 @@
 package main
 
 import (
-	"github.com/AbhijeetPundkar/ecommerce-backend/internals/db"
-	"net/http"
-	"github.com/gorilla/mux"
-	"log"
+    "github.com/AbhijeetPundkar/ecommerce-backend/internals/db"
+    "github.com/AbhijeetPundkar/ecommerce-backend/routes"
+    "github.com/gin-gonic/gin"
+    "log"
 )
 
-func main(){
-	db.Connect()
-	r := mux.NewRouter()
-	
-	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
-		w.Write([]byte("Welcome to Go Shop"))
-	})
+func main() {
+    // Initialize the database connection
+    db.Connect()
 
-	log.Println("Server is running on port 8080")
-	http.ListenAndServe(":8080", r)
+    // Initialize the Gin router
+    router := gin.Default()
 
+    // Register routes
+    routes.RegisterRoutes(router)
 
-	
+    // Start the server
+    if err := router.Run(":8080"); err != nil {
+        log.Fatalf("failed to start server: %v", err)
+    }
 }

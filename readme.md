@@ -53,9 +53,27 @@ This is the backend for our e-commerce application.
 └── go.sum              # Go modules dependencies
 ```
 
-## Getting Started
+## Environment Variables
 
-## API Documentation
+The application uses the following environment variables, which should be defined in the `.env` file:
 
-## Contributing
+- `DB_HOST`: The hostname of the database server.
+- `DB_PORT`: The port number on which the database server is running.
+- `DB_USER`: The username for the database connection.
+- `DB_PASSWORD`: The password for the database connection.
+- `DB_NAME`: The name of the database to connect to.
+- `JWT_SECRET`: The secret key used for signing JWT tokens. --> add to env
+- `PORT`: The port number on which the server will listen.
+
+Ensure that you have a `.env` file in the root directory with the appropriate values for these variables.
+
+## TODO List
+
+- [x] Set up the initial project structure
+- [x] Implement user authentication and authorization
+- [ ] Implement GoRoutine to refresh the token in background
+- [ ] Create CRUD operations for products
+
+
+
 
